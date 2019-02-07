@@ -15,6 +15,7 @@ class QuestionController extends Controller
      */
     public function __construct()
     {
+<<<<<<< HEAD
         $this->middleware('jwt', ['except' => ['index', 'show']]);
     }
     /**
@@ -24,6 +25,8 @@ class QuestionController extends Controller
      */
     public function index()
     {
+=======
+>>>>>>> 9ef1eefc3fa4a189be5a04e3d5e898760c4c44af
         return QuestionResource::collection(Question::latest()->get());
     }
 
