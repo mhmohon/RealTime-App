@@ -21,7 +21,6 @@ Route::apiResource('/question/{question}/reply', 'ReplyController');
 
 Route::post('/like/{reply}', 'LikeController@likeIt');
 
-<<<<<<< HEAD
 Route::delete('/like/{reply}', 'LikeController@unLikeIt');
 
 Route::group([
@@ -38,6 +37,3 @@ Route::group([
     Route::post('me', 'AuthController@me');
 
 });
-=======
-Route::delete('/like/{reply}', 'LikeController@unLikeIt');
->>>>>>> 9ef1eefc3fa4a189be5a04e3d5e898760c4c44af

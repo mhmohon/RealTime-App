@@ -8,11 +8,11 @@ use App\Http\Resources\QuestionResource;
 
 class QuestionController extends Controller
 {
-     /**
-     * Create a new AuthController instance.
-     *
-     * @return void
-     */
+    /**
+    * Create a new AuthController instance.
+    *
+    * @return void
+    */
     public function __construct()
     {
         $this->middleware('jwt', ['except' => ['index', 'show']]);
@@ -36,8 +36,8 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        Question::create($request->all());
-        return response('Created', 201);
+        $question = auth()->user()->question()->create($request->all());
+        return response(new QuestionResource($question), 201);
     }
 
     /**
