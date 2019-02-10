@@ -18,11 +18,14 @@
                 <v-btn color="teal">5 Replies</v-btn>
             </v-card-title>
             <v-card-text v-html="content"></v-card-text>
-            <v-card-action>
-                <v-btn icon small color="orange">
-                    <v-icon>edit</v-icon>
+            <v-card-actions v-if="own">
+                <v-btn icon small @click="edit">
+                    <v-icon color="orange">edit</v-icon>
                 </v-btn>
-            </v-card-action>
+                <v-btn icon small @click="destroy">
+                    <v-icon color="red">delete</v-icon>
+                </v-btn>
+            </v-card-actions>
         </v-container>
 
     </v-card>
@@ -32,9 +35,24 @@
 import md from 'marked'
 export default {
     props:['data'],
+    data(){
+        return{
+            own : User.own(this.data.user_id)
+        }
+    },
     computed:{
         content(){
             return md.parse(this.data.content)
+        }
+    },
+    methods:{
+        destroy(){
+            axios.delete(`/api/question/${this.data.slug}`)
+            .then(res => this.$router.push('/forum'))
+            .catch(error => console.log(error.response.data))
+        },
+        edit(){
+            EventBus.$emit('EditQuestion')
         }
     }
 }

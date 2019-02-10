@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-    protected $guarded = [
-        'id'
-    ];
+    protected $fillable = ['title', 'slug', 'content', 'user_id', 'category_id'];
 
     protected static function boot()
     {
