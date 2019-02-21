@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,6 +21,10 @@ Route::apiResource('/question/{question}/reply', 'ReplyController');
 Route::post('/like/{reply}', 'LikeController@likeIt');
 
 Route::delete('/like/{reply}', 'LikeController@unLikeIt');
+
+Route::post('/notifications', 'NotificationController@index');
+
+Route::post('/notification/markRead', 'NotificationController@markRead');
 
 Route::group([
 

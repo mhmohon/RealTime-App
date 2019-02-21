@@ -11,9 +11,8 @@
         </question>
       </v-flex>
       <v-flex xs4>
-        <v-card dark color="primary">
-          <v-card-text class="px-0">12</v-card-text>
-        </v-card>
+        <app-sidebar></app-sidebar>
+          
       </v-flex>
     </v-layout>
     </v-container>
@@ -21,8 +20,9 @@
 
 <script>
 import Question from './Question'
+import AppSidebar from './AppSidebar'
 export default {
-    components: {Question},
+    components: {Question,AppSidebar},
     data(){
         return {
             questions: { }

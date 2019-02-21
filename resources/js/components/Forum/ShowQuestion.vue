@@ -15,7 +15,7 @@
                 </div>
                 </div>
                 <v-spacer></v-spacer>
-                <v-btn color="teal">5 Replies</v-btn>
+                <v-btn color="teal" dark>{{ data.reply_count }} Replies</v-btn>
             </v-card-title>
             <v-card-text v-html="content"></v-card-text>
             <v-card-actions v-if="own">

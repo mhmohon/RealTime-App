@@ -19,9 +19,11 @@ Vue.use(Vuetify)
 Vue.use(VueSimplemde)
 
 import User from './Helpers/User'
+import Exception from './Helpers/Exception'
 // import AppStorage from './Helpers/AppStorage'
 
 window.User = User;
+window.Exception = Exception;
 // window.AppStorage = AppStorage;
 
 window.EventBus = new Vue();
