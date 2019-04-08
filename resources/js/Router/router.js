@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Home from '../components/Home'
 import Login from '../components/Login/Login'
 import Signup from '../components/Login/Signup'
 import Forum from '../components/Forum/Forum'
@@ -11,6 +12,10 @@ import CreateCategory from '../components/Category/CreateCategory'
 Vue.use(VueRouter)
 
 const routes = [
+    {
+        path: '/',
+        component: Home
+    },
     {
         path: '/login',
         component: Login

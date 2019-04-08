@@ -14,7 +14,7 @@
                 <v-btn icon small>
                     <v-icon color="orange">edit</v-icon>
                 </v-btn>
-                <v-btn icon small>
+                <v-btn icon small @click="destroy">
                     <v-icon color="red">delete</v-icon>
                 </v-btn>
             </v-card-actions>
@@ -26,11 +26,16 @@
 import Like from '../Likes/Like'
 
 export default {
-    props: ['data'],
+    props: ['data', 'index'],
     components:{Like},
     computed: {
         own(){
             return User.own(this.data.user_id)
+        }
+    },
+    methods:{
+        destroy(){
+            EventBus.$emit('deleteReply', this.index)
         }
     }
 }

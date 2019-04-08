@@ -50,6 +50,18 @@
 
             
         </v-form>
+        <v-btn
+            color="blue dark"
+            @click="userOne"
+            >
+            Demo User 1
+        </v-btn>
+        <v-btn
+            color="blue dark"
+            @click="userTwo"
+            >
+            Demo User 2
+        </v-btn>
     </v-container>
 </template>
 
@@ -89,6 +101,18 @@
         },
         login () {
             User.login(this.form)
+            
+        },
+        userOne () {
+            // this.$refs.form.reset()
+            this.form.email = 'demouserone@gmail.com'
+            this.form.password = 'secret'
+            
+        },
+        userTwo () {
+            // this.$refs.form.reset()
+            this.form.email = 'demousertwo@gmail.com'
+            this.form.password = 'secret'
             
         }
     }

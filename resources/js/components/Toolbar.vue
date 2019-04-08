@@ -1,6 +1,8 @@
 <template>
-  <v-toolbar>
-    <v-toolbar-title>Idea Fourm</v-toolbar-title>
+  <v-toolbar color="indigo" dark>
+    <v-toolbar-title>
+      <router-link class="white--text" to="/">Idea Fourm</router-link> 
+    </v-toolbar-title>
     <v-spacer></v-spacer>
     <app-notification></app-notification>
     <div class="hidden-sm-and-down">

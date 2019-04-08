@@ -3,14 +3,15 @@
         <edit-question 
         v-if="editing"
         :data = question
-        ></edit-question>
+        >
+        </edit-question>
         <div v-else>
             <show-question 
             :data = question
             v-if = "question"
             ></show-question>
             <v-container>
-                <replies :replies="question.replies"></replies>
+                <replies :question="question"></replies>
                 <new-reply :qSlug="question.slug"></new-reply>
             </v-container>
         </div>
